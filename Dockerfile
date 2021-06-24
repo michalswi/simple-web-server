@@ -33,4 +33,4 @@ ENV SERVER_PORT ""
 
 COPY --from=builder /tmp/dummy/${APPNAME}-${VERSION} /usr/bin/${APPNAME}
 
-CMD ["simplews"]
+CMD ["simple-web-server"]

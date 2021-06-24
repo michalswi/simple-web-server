@@ -3,7 +3,7 @@ ALPINE_VERSION := 3.13
 
 GIT_REPO := github.com/michalswi/simple-web-server
 DOCKER_REPO := michalsw
-APPNAME := simplews
+APPNAME := simple-web-server
 
 VERSION ?= $(shell git describe --always)
 
