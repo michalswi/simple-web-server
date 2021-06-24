@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-var logger = log.New(os.Stdout, "IPer ", log.LstdFlags|log.Lshortfile|log.Ltime|log.LUTC)
+var logger = log.New(os.Stdout, "web-server ", log.LstdFlags|log.Lshortfile|log.Ltime|log.LUTC)
 var port = getEnv("SERVER_PORT", "80")
 
 func main() {

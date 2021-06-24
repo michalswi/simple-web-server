@@ -13,7 +13,6 @@ WORKDIR /tmp/dummy
 
 COPY --chown=dummy Makefile Makefile
 COPY --chown=dummy go.mod go.mod
-COPY --chown=dummy go.sum go.sum
 
 RUN go mod download
 

@@ -1,9 +1,11 @@
 GOLANG_VERSION := 1.15.6
 ALPINE_VERSION := 3.13
 
-GIT_REPO := github.com/michalswi/url-shortener
+GIT_REPO := github.com/michalswi/simple-web-server
 DOCKER_REPO := michalsw
 APPNAME := simplews
+
+VERSION ?= $(shell git describe --always)
 
 SERVER_PORT ?= 8080
 
@@ -18,7 +20,7 @@ build: ## Build bin
 	CGO_ENABLED=0 \
 	go build \
 	-v \
-	-ldflags "-s -w -X '$(GIT_REPO)/version.AppVersion=$(VERSION)' \
+	-ldflags "-s -w -X '$(GIT_REPO)/version.AppVersion=$(VERSION)'" \
 	-o $(APPNAME)-$(VERSION) .
 
 run: ## Run app
