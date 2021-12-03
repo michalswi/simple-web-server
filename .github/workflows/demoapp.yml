@@ -1,24 +1,33 @@
 name: Linux Container Node Workflow
 
-on: [push]
+# on: [push]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
   build:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-
     - uses: azure/docker-login@v1
       with:
         # login-server: index.docker.io               # docker.io is the default one
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
-
     - run: |
         docker build --build-arg GOLANG_VERSION=1.15.6 --build-arg ALPINE_VERSION=3.13 --build-arg APPNAME=simple-web-server --build-arg VERSION=${{ github.sha }} -t michalsw/simple-web-server:${{ github.sha }} .
         docker push michalsw/simple-web-server:${{ github.sha }}
-
     - uses: azure/webapps-deploy@v2
       with:
         app-name: 'demogoapp'
