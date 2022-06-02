@@ -23,3 +23,8 @@ Targets:
   docker-run       Run docker
   docker-stop      Stop docker
 ```
+
+
+### # important
+
+If you use **non-root** user in Dockerfile, app might **not** work in Azure App Services (requires root).
