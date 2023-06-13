@@ -1,5 +1,10 @@
 ## **Simple Web Server**
 
+![](https://img.shields.io/github/issues/michalswi/simple-web-server)
+![](https://img.shields.io/github/forks/michalswi/simple-web-server)
+![](https://img.shields.io/github/stars/michalswi/simple-web-server)
+![](https://img.shields.io/github/last-commit/michalswi/simple-web-server)
+
 This is just POC to test Golang App with Azure App Services.  
 
 [Link](https://docs.microsoft.com/en-us/azure/app-service/) to Azure App Services.  
