@@ -17,7 +17,10 @@ func main() {
 
 func hz(w http.ResponseWriter, r *http.Request) {
 	logger.Println(r.UserAgent())
-	w.Write([]byte("ok"))
+	_, err := w.Write([]byte("ok"))
+	if err != nil {
+		logger.Println("Error writing response:", err)
+	}
 }
 
 func getEnv(key, defaultValue string) string {
