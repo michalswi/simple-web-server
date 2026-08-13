@@ -1,5 +1,5 @@
-GOLANG_VERSION := 1.15.6
-ALPINE_VERSION := 3.13
+GOLANG_VERSION := 1.25.5
+ALPINE_VERSION := 3.23
 
 GIT_REPO := github.com/michalswi/simple-web-server
 DOCKER_REPO := michalsw
